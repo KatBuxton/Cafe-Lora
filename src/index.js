@@ -1,4 +1,5 @@
 import './style.css';
+import {Layer} from './Layer/index.js';
 
 console.log('funguju!');
 
@@ -14,7 +15,7 @@ const closeMenu = () => {
   navElm.classList.add("nav-closed");
  }
 
-document.querySelectorAll("a").forEach((item) => {
+document.querySelectorAll("nav a").forEach((item) => {
 item.addEventListener("click", closeMenu)
 })
 const orderBtn = document.querySelector(".order-btn")
@@ -36,5 +37,24 @@ orderBtn.addEventListener("click", () => {
   }
 })
 
+const layers = [
+  {
+    color: '#feeeca',
+    label: 'mléčná pěna',
+  },
+  {
+    color: '#fed7b0',
+    label: 'teplé mléko',
+  },
+  {
+    color: '#613916',
+    label: 'espresso',
+  },
+];
+
+const cappuccinoElm = document.querySelector(".drink__info")
+for (let i = 0; i < layers.length; i += 1) {
+cappuccinoElm.innerHTML += Layer(layers[i])
+}
 
 
