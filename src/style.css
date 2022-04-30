@@ -41,6 +41,7 @@ h2 {
   text-align: center;
 }
 
+
 h3 {
   text-transform: uppercase;
 }
@@ -134,10 +135,15 @@ nav a:hover {
   font-size: 1.2rem;
 }
 
-.menu-intro {
+.menu-intro, 
+.gallery-intro {
   max-width: 20rem;
   margin: 0 auto 0 auto;
   text-align: center;
+}
+
+.gallery-intro {
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .drinks-list {
@@ -236,7 +242,7 @@ nav a:hover {
 }
 
 .gallery {
-  padding-top: 0;
+  padding-top: 2rem;
   min-height: 100vh;
 
   color: white;
