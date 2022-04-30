@@ -143,7 +143,7 @@ nav a:hover {
 }
 
 .gallery-intro {
-  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
 }
 
 .drinks-list {
