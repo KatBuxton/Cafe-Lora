@@ -1,5 +1,6 @@
 import './style.css';
 import {Layer} from './Layer/index.js';
+import {Drink} from "./Drink/index.js";
 
 console.log('funguju!');
 
@@ -18,6 +19,33 @@ const closeMenu = () => {
 document.querySelectorAll("nav a").forEach((item) => {
 item.addEventListener("click", closeMenu)
 })
+
+const drinks = [
+  {
+    id: 'romano',
+    name: 'Romano',
+    ordered: false,
+    layers: [
+      {
+        color: '#fbdf5b',
+        label: 'citrón',
+      },
+      {
+        color: '#613916',
+        label: 'espresso',
+      },
+    ],
+    image: 'https://apps.kodim.cz/daweb/cafelora/assets/cups/romano.png',
+  },
+  ]
+
+const drinksElm = document.querySelector(".drinks-list")
+for (let i = 0; i < drinks.length; i += 1) {
+  drinksElm.appendChild(Drink(drinks[i]))
+}
+
+
+
 const orderBtn = document.querySelector(".order-btn")
 
 const drinkElm = document.querySelector(".drink__cup")
@@ -51,10 +79,5 @@ const layers = [
     label: 'espresso',
   },
 ];
-
-const cappuccinoElm = document.querySelector(".drink__info")
-for (let i = 0; i < layers.length; i += 1) {
-cappuccinoElm.innerHTML += Layer(layers[i])
-}
 
 
