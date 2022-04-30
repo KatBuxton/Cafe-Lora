@@ -22,6 +22,26 @@ item.addEventListener("click", closeMenu)
 
 const drinks = [
   {
+    id: 'cappuccino',
+    name: 'Cappuccino',
+    ordered: false,
+    layers: [
+      {
+        color: '#feeeca',
+        label: 'mléčná pěna',
+      },
+      {
+        color: '#fed7b0',
+        label: 'teplé mléko',
+      },
+      {
+        color: '#613916',
+        label: 'espresso',
+      },
+    ],
+    image: 'https://apps.kodim.cz/daweb/cafelora/assets/cups/cappuccino.png',
+  },
+   {
     id: 'romano',
     name: 'Romano',
     ordered: false,
@@ -45,25 +65,24 @@ for (let i = 0; i < drinks.length; i += 1) {
 }
 
 
+// const orderBtn = document.querySelector(".order-btn")
 
-const orderBtn = document.querySelector(".order-btn")
+// const drinkElm = document.querySelector(".drink__cup")
 
-const drinkElm = document.querySelector(".drink__cup")
+// let ordered = false 
 
-let ordered = false 
-
-orderBtn.addEventListener("click", () => {
-  if (ordered === false) {
-    ordered = true;
-    drinkElm.classList.add("drink__cup--selected");
-    orderBtn.textContent = "Zrušit";
-  }
-  else {
-    ordered = false;
-    drinkElm.classList.remove("drink__cup--selected");
-    orderBtn.textContent = "Objednat";
-  }
-})
+// orderBtn.addEventListener("click", () => {
+//   if (ordered === false) {
+//     ordered = true;
+//     drinkElm.classList.add("drink__cup--selected");
+//     orderBtn.textContent = "Zrušit";
+//   }
+//   else {
+//     ordered = false;
+//     drinkElm.classList.remove("drink__cup--selected");
+//     orderBtn.textContent = "Objednat";
+//   }
+// })
 
 const layers = [
   {

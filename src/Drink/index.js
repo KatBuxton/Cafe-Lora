@@ -3,7 +3,8 @@ import './style.css';
 
 
 export const Drink = (props) => {
-  const { name, ordered, layers, image } = props
+  const { name, layers, image } = props
+  let { ordered } = props
 
   const drinkDiv = document.createElement("div")
   drinkDiv.classList.add("drink")
@@ -26,6 +27,22 @@ export const Drink = (props) => {
   for (let i = 0; i < layers.length; i += 1) {
     drinkInfoElm.innerHTML += Layer(layers[i])
     }
+  
+  const orderBtn = drinkDiv.querySelector(".order-btn")
+  const drinkElm = drinkDiv.querySelector(".drink__cup")
+
+  orderBtn.addEventListener("click", () => {
+    if (ordered === false) {
+      ordered = true;
+      drinkElm.classList.add("drink__cup--selected");
+      orderBtn.textContent = "Zrušit";
+    }
+    else {
+      ordered = false;
+      drinkElm.classList.remove("drink__cup--selected");
+      orderBtn.textContent = "Objednat";
+    }
+  })
 
   return drinkDiv
 }
